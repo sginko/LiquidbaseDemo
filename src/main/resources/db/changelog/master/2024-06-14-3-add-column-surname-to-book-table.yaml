@@ -8,4 +8,4 @@ databaseChangeLog:
             columns:
               - column:
                   name: surname
-                  type: varchar(50)
+                  type: varchar(255)

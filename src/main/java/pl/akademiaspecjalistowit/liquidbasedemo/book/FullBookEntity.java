@@ -23,11 +23,14 @@ public class FullBookEntity {
 
     private String title;
 
-    private String author;
+    private String name;
 
-    public FullBookEntity(String isbn, String title, String author) {
+    private String surname;
+
+    public FullBookEntity(String isbn, String title, String name, String surname) {
         this.isbn = isbn;
         this.title = title;
-        this.author = author;
+        this.name = name;
+        this.surname = surname;
     }
 }

@@ -1,6 +1,6 @@
 databaseChangeLog:
   -  changeSet:
-       id:  renameColumn-author-to name
+       id:  renameColumn-author-to-name
        author:  Sergi
        changes:
          -  renameColumn:
