@@ -1,5 +1,8 @@
 package pl.akademiaspecjalistowit.liquidbasedemo.borrow;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class BorrowServiceImpl implements BorrowService {
     private final BorrowRepository borrowRepository;
     private final BorrowMapper borrowMapper;

@@ -31,9 +31,15 @@ public class BookController {
         return bookRepository.getIsbnByTitle(name);
     }
 
+//    @PostMapping
+//    public void createBook(){
+//        fullBookRepository.save(
+//            new FullBookEntity("72938792734","Ania ma kota","Adaś"));
+//    }
+
     @PostMapping
     public void createBook(){
         fullBookRepository.save(
-            new FullBookEntity("72938792734","Ania ma kota","Adaś"));
+                new FullBookEntity("72938792734","Ania ma kota","Adaś"));
     }
 }

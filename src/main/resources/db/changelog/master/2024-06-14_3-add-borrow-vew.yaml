@@ -6,4 +6,11 @@ databaseChangeLog:
         - createView:
             viewName: borrowView
             selectQuery:
+#              SELECT b.author, b.author_last_name, COUNT(br.id) AS borrow_count
+              SELECT b.author, b.author_last_name, COUNT(br.id) AS borrow_count
+              FROM books b
+              JOIN borrows br ON b.id = br.book_id
+              WHERE br.return_date IS NULL
+              GROUP BY b.author, b.author_last_name
+              ORDER BY borrow_count DESC, b.author, b.author_last_name
               
