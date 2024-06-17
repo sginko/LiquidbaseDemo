@@ -33,7 +33,16 @@ public class BookController {
 
     @PostMapping
     public void createBook(){
-        fullBookRepository.save(
-            new FullBookEntity("72938792734","Ania ma kota","Adaś"));
+        fullBookRepository.saveAll(List.of(
+            new FullBookEntity("72938792734","Ania ma kota","Adaś"),
+            new FullBookEntity("34565423235","book2","Adaś"),
+            new FullBookEntity("78657457862","book2","Adaś"),
+            new FullBookEntity("65766341234","book2","Adaś"),
+            new FullBookEntity("42099089567","book2","Adaś"),
+            new FullBookEntity("14333335760","book2","Adaś"),
+            new FullBookEntity("45454545323","book2","Adaś"),
+            new FullBookEntity("12123123123","book2","Adaś"),
+            new FullBookEntity("09978676343","book2","Adaś"),
+            new FullBookEntity("77742312379","book2","Adaś")));
     }
 }

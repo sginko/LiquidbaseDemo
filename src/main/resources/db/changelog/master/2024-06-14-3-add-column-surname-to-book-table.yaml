@@ -1,11 +1,11 @@
 databaseChangeLog:
   - changeSet:
-      id: add-column-author-to-book-table
+      id: add-column-surname-to-book-table
       author: Sergi
       changes:
         - addColumn:
             tableName: books
             columns:
               - column:
-                  name: author
+                  name: surname
                   type: varchar(50)

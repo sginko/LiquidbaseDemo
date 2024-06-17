@@ -34,7 +34,9 @@ public class ReaderController {
     public void createBook() {
         readerRepository.saveAll(List.of(
             new ReaderEntity(UUID.randomUUID(), "Ania", "Adamowicz"),
-            new ReaderEntity(UUID.randomUUID(), "Ola", "Adamczyk")));
+            new ReaderEntity(UUID.randomUUID(), "Ola", "Adamczyk"),
+            new ReaderEntity(UUID.randomUUID(), "Aga", "Agowycz"),
+            new ReaderEntity(UUID.randomUUID(), "BeatA", "Beatowicz")));
     }
 
 }
