@@ -38,10 +38,10 @@ public class BookController {
             new FullBookEntity("34565423235","book2","name2", "surname2"),
             new FullBookEntity("78657457862","book2","name3", "surname3"),
             new FullBookEntity("65766341234","book2","name4", "surname4"),
-            new FullBookEntity("42099089567","book2","name3", "surname3"),
+            new FullBookEntity("42099089567","book2","name", "surname"),
             new FullBookEntity("14333335760","book2","name3", "surname3"),
             new FullBookEntity("45454545323","book2","name4", "surname4"),
-            new FullBookEntity("12123123123","book2","name5", "surname5"),
+            new FullBookEntity("12123123123","book2","name", "surname"),
             new FullBookEntity("09978676343","book2","name6", "surname6"),
             new FullBookEntity("77742312379","book2","name7", "surname7")));
     }
