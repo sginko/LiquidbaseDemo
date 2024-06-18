@@ -4,12 +4,29 @@ databaseChangeLog:
       author: Sergi
       changes:
         - createView:
-            viewName: borrowView
+            viewName: borrow_view
             selectQuery:
+              WITH total_borrows AS (
+              SELECT COUNT(*) AS total
+              FROM borrows
+              WHERE return_date IS NULL
+              ),
+              author_borrows AS (
               SELECT b.name, b.surname, COUNT(br.id) AS borrow_count
               FROM books b
               JOIN borrows br ON b.id = br.book_id
               WHERE br.return_date IS NULL
               GROUP BY b.name, b.surname
-              ORDER BY borrow_count DESC, b.name, b.surname
-              
+              )
+              SELECT ab.name, ab.surname, ab.borrow_count,
+              (ab.borrow_count::FLOAT / tb.total) * 100 AS borrow_percentage
+              FROM author_borrows ab, total_borrows tb
+              ORDER BY borrow_percentage DESC, ab.name, ab.surname
+
+
+#              SELECT b.name, b.surname, COUNT(br.id) AS borrow_count
+#              FROM books b
+#              JOIN borrows br ON b.id = br.book_id
+#              WHERE br.return_date IS NULL
+#              GROUP BY b.name, b.surname
+#              ORDER BY borrow_count DESC, b.name, b.surname
