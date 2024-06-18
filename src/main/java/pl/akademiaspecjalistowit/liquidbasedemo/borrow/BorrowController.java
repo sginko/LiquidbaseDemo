@@ -15,7 +15,7 @@ public class BorrowController {
     }
 
     @PostMapping
-    public void addBorrow(BorrowRequestDto requestDto){
+    public void addBorrow(@RequestBody BorrowRequestDto requestDto){
         borrowService.addBorrow(requestDto);
     }
 }

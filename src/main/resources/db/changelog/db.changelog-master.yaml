@@ -9,8 +9,8 @@ databaseChangeLog:
       file: db/changelog/master/2024-06-14-2-rename-column-author-to-name.yaml
   - include:
       file: db/changelog/master/2024-06-14-3-add-column-surname-to-book-table.yaml
-  - include:
-      file: db/changelog/master/2024-06-14-4-add-borrow-vew.yaml
+#  - include:
+#      file: db/changelog/master/2024-06-14-4-add-borrow-vew.yaml
 
 #  - include:
 #      file: db/changelog/master/2023-12-04_6-add-statistics-view.yaml

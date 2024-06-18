@@ -24,11 +24,15 @@ databaseChangeLog:
                   type: bigint
                   constraints:
                     nullable: false
+                    foreignKeyName: fk_reader_id
+                    references: readers(id)
               - column:
                   name: book_id
                   type: bigint
                   constraints:
                     nullable: false
+                    foreignKeyName: fk_book_id
+                    references: books(id)
               - column:
                   name: borrow_date
                   type: time
@@ -38,4 +42,4 @@ databaseChangeLog:
                   name: return_date
                   type: time
                   constraints:
-                    nullable: false
+                    nullable: true

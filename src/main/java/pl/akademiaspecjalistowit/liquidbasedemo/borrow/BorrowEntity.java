@@ -3,6 +3,11 @@ package pl.akademiaspecjalistowit.liquidbasedemo.borrow;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import pl.akademiaspecjalistowit.liquidbasedemo.book.FullBookEntity;
+import pl.akademiaspecjalistowit.liquidbasedemo.reader.ReaderEntity;
+
+import java.time.LocalDate;
+import java.util.UUID;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
@@ -13,11 +18,24 @@ public class BorrowEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long readerId;
-    private Long bookId;
+    private UUID technicalId;
 
-    public BorrowEntity(Long readerId, Long bookId) {
+    @ManyToOne
+    @JoinColumn(name = "readerId")
+    private ReaderEntity readerId;
+
+    @ManyToOne
+    @JoinColumn(name = "bookId")
+    private FullBookEntity bookId;
+
+    private LocalDate borrowDate;
+    private LocalDate returnDate;
+
+    public BorrowEntity(ReaderEntity readerId, FullBookEntity bookId) {
+        this.technicalId = UUID.randomUUID();
         this.readerId = readerId;
         this.bookId = bookId;
+        this.borrowDate = LocalDate.now();
+        this.returnDate = null;
     }
 }
